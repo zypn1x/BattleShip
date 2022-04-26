@@ -18,6 +18,10 @@ class Ship {
     }
   }
   explicit Ship (Point &beg, Point &end ) : begin_(beg), end_(end) {
+    if ((begin_.GetOrdinate() == end_.GetOrdinate() && begin_.GetAbscissa() > end_.GetAbscissa()) ||
+        (begin_.GetOrdinate() > end_.GetOrdinate() && begin_.GetAbscissa() == end_.GetAbscissa()) ) {
+      std::swap(begin_,end_);
+    }
     for (int i = 0; i < N; ++i) {
       ship_[i] = 1;
     }
