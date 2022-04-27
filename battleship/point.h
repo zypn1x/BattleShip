@@ -39,8 +39,8 @@ class Point {
 std::istream &operator>>(std::istream &is, Point &tmp) {
   size_t a;
   char b;
-  is >> a;
   is >> b;
+  is >> a;
   a--;
   size_t c = b - 'A';
   tmp.SetAbscissa(c);

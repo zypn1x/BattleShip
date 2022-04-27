@@ -3,7 +3,6 @@
 #include "field.h"
 #include "ship.h"
 #include "point.h"
-
 class ProtectionField : public Field {
  public:
   explicit ProtectionField(std::array<std::array<int, 10>, 10> field) : Field(field) {}
@@ -41,14 +40,8 @@ class ProtectionField : public Field {
         if (Field::GetPoint(ship.GetBegin().GetAbscissa() - 1, ship.GetBegin().GetOrdinate()) == 1) {
           return false;
         }
-        if (Field::GetPoint(ship.GetEnd().GetAbscissa() - 1, ship.GetEnd().GetOrdinate()) == 1) {
-          return false;
-        }
       }
       if (ship.GetBegin().GetAbscissa() < 9 && ship.GetEnd().GetAbscissa() < 9) {
-        if (Field::GetPoint(ship.GetBegin().GetAbscissa() + 1, ship.GetBegin().GetOrdinate()) == 1) {
-          return false;
-        }
         if (Field::GetPoint(ship.GetEnd().GetAbscissa() + 1, ship.GetEnd().GetOrdinate()) == 1) {
           return false;
         }
@@ -80,14 +73,8 @@ class ProtectionField : public Field {
         if (Field::GetPoint(ship.GetBegin().GetAbscissa(), ship.GetBegin().GetOrdinate() - 1) == 1) {
           return false;
         }
-        if (Field::GetPoint(ship.GetEnd().GetAbscissa(), ship.GetEnd().GetOrdinate() - 1) == 1) {
-          return false;
-        }
       }
       if (ship.GetBegin().GetOrdinate() < 9 && ship.GetEnd().GetOrdinate() < 9) {
-        if (Field::GetPoint(ship.GetBegin().GetAbscissa(), ship.GetBegin().GetOrdinate() + 1) == 1) {
-          return false;
-        }
         if (Field::GetPoint(ship.GetEnd().GetAbscissa(), ship.GetEnd().GetOrdinate() + 1) == 1) {
           return false;
         }
