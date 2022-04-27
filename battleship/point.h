@@ -32,20 +32,6 @@ class Point {
   bool operator==(Point &other) const{
     return (other.ordinate_ == ordinate_ && other.abscissa_ == abscissa_);
   }
-  friend std::istream &operator>>(std::istream &is, Point &tmp);
-  ~Point() = default;
 };
-
-std::istream &operator>>(std::istream &is, Point &tmp) {
-  size_t a;
-  char b;
-  is >> b;
-  is >> a;
-  a--;
-  size_t c = b - 'A';
-  tmp.SetAbscissa(c);
-  tmp.SetOrdinate(a);
-  return is;
-}
 
 #endif
